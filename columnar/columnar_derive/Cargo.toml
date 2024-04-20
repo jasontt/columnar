@@ -1,0 +1,26 @@
+[package]
+name = "columnar_derive"
+version.workspace = true
+authors.workspace = true
+description.workspace = true
+edition.workspace = true
+
+[lib]
+proc-macro = true
+
+[[bench]]
+name = "bench"
+harness = false
+
+[dependencies]
+syn = "2.0"
+quote = "1.0"
+proc-macro2 = "1.0"
+columnar_trait = { path = "../columnar_trait" }
+arrayvec = "*"
+bitvec = "1"
+wide = "*"
+cache-size = "*"
+
+[dev-dependencies]
+criterion = "0.3"
